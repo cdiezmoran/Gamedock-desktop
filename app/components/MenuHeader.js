@@ -8,14 +8,19 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import styles from './MenuHeader.css';
 
 export default class MenuHeader extends Component {
   render() {
     return (
       <div className="menu-header">
-        <div className="menu-user">
-          <img src="https://s22.postimg.org/sizurovvl/Profile.jpg" className="circular-img"/>
-          <Link to="#">Username</Link>
+        <div className="menu-user container">
+          <div className="row flex-items-xs-center center-align">
+            <Link to="#"><img src="https://s22.postimg.org/sizurovvl/Profile.jpg" className="circular-img"/></Link>
+          </div>
+          <div className="row flex-items-xs-center center-align">
+            <Link to="#">Username</Link>
+          </div>
         </div>
       </div>
     )

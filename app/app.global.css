@@ -1,4 +1,6 @@
 @import "~font-awesome/css/font-awesome.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./components/MenuHeader.css";
 
 body {
   position: absolute;
@@ -32,6 +34,7 @@ a {
   top: 0; right: 0; bottom: 0; left: 225px;
   width: auto; height: auto;
   transition: all 0.2s ease-out;
+  overflow-y: scroll;
 }
 
 .circular-img {
