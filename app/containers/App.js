@@ -1,7 +1,7 @@
 // @flow
 import React, { Component, PropTypes } from 'react';
 
-import MenuHeader from '../components/MenuHeader';
+import Menu from '../components/Menu';
 
 export default class App extends Component {
   static propTypes = {
@@ -12,7 +12,7 @@ export default class App extends Component {
     return (
       <div id="container">
         <section id="menu">
-          <MenuHeader />
+          <Menu />
         </section>
         <div id="content-container">
           {this.props.children}

@@ -10,6 +10,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import styles from './MenuHeader.css';
 
+import SearchBar from './SearchBar';
+
 export default class MenuHeader extends Component {
   render() {
     return (
@@ -20,6 +22,9 @@ export default class MenuHeader extends Component {
           </div>
           <div className="row flex-items-xs-center center-align">
             <Link to="#">Username</Link>
+          </div>
+          <div className="row flex-items-xs-center center-align search-bar">
+            <SearchBar />
           </div>
         </div>
       </div>

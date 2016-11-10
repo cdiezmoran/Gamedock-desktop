@@ -1,6 +1,6 @@
 @import "~font-awesome/css/font-awesome.css";
 @import "~bootstrap/dist/css/bootstrap.css";
-@import "./components/MenuHeader.css";
+@import "./components/Menu.css";
 
 body {
   position: absolute;
