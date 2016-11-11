@@ -12,7 +12,10 @@ export default class SearchBar extends Component {
     return (
       <form>
         <div className="form-group">
-          <input type="text" placeholder=" &#xF002; Search" className="icon-input" />
+          <div className="input-group">
+            <div className="input-group-addon"><i className="fa fa-search"></i></div>
+            <input type="text" className="form-control" />
+          </div>
         </div>
       </form>
     )
