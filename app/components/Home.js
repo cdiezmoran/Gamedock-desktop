@@ -5,6 +5,8 @@ import { desktopCapturer } from 'electron';
 import $ from 'jquery';
 import styles from './Home.css';
 
+let localStream;
+
 class Home extends Component {
   handleCapture() {
     // Change state to capturing
@@ -15,7 +17,6 @@ class Home extends Component {
         // TODO: Replace gamedock with game name from props
         console.log(source.name)
         if(source.name === "Slack - Make School Product Academy '18") {
-          console.log("Getting media for " + source.name)
           navigator.mediaDevices.getUserMedia({
             audio: false,
             video: {
@@ -29,9 +30,12 @@ class Home extends Component {
               }
             }
           }).then((stream) => {
-            // TODO: Handle stream
-            console.log("Got stream")
+            // TODO: Save stream
+            localStream = stream
             $('#video').attr("src", URL.createObjectURL(stream))
+            stream.onended(() => {
+              handleStop()
+            });
           }).catch((error) => {
             console.log(error);
           });
@@ -42,6 +46,11 @@ class Home extends Component {
 
   handleStop() {
     // TODO: Stop the capture
+    if (localStream)
+      localStream.getTracks()[0].stop();
+    localStream = null;
+
+    $('#video').attr('src', '');
   }
 
   render() {
