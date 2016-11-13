@@ -2,10 +2,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { desktopCapturer } from 'electron';
+import MediaStreamRecorder from 'msr';
 import $ from 'jquery';
 import styles from './Home.css';
 
-let localStream;
+let mediaRecorder;
 
 class Home extends Component {
   handleCapture() {
@@ -15,8 +16,8 @@ class Home extends Component {
     desktopCapturer.getSources({types: ['window', 'screen']}, (error, sources) => {
       for(let source of sources) {
         // TODO: Replace gamedock with game name from props
-        console.log(source.name)
-        if(source.name === "Slack - Make School Product Academy '18") {
+        //console.log(source)
+        if(source.name === "Entire screen") {
           navigator.mediaDevices.getUserMedia({
             audio: false,
             video: {
@@ -30,12 +31,16 @@ class Home extends Component {
               }
             }
           }).then((stream) => {
-            // TODO: Save stream
-            localStream = stream
-            $('#video').attr("src", URL.createObjectURL(stream))
-            stream.onended(() => {
-              handleStop()
-            });
+            mediaRecorder = new MediaStreamRecorder(stream);
+            mediaRecorder.recorderType = MediaRecorderWrapper;
+
+            mediaRecorder.ondataavailable = (blob) => {
+              let blobURL = URL.createObjectURL(blob)
+              mediaRecorder.save(blob, new Date().getTime() + "-custom.webm");
+              $('#video').attr("src", blobURL);
+            }
+            mediaRecorder.start(5 * 5000);
+
           }).catch((error) => {
             console.log(error);
           });
@@ -45,10 +50,11 @@ class Home extends Component {
   }
 
   handleStop() {
-    // TODO: Stop the capture
-    if (localStream)
-      localStream.getTracks()[0].stop();
-    localStream = null;
+    if(mediaRecorder) {
+      //mediaRecorder.save();
+      mediaRecorder.stop();
+    }
+
 
     $('#video').attr('src', '');
   }
