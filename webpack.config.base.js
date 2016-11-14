@@ -38,6 +38,8 @@ export default validate({
     // (mysql, mongodb, and so on..)
     'bootstrap',
     'jquery',
-    'msr'
+    'msr',
+    'mongodb',
+    'mongoose'
   ]
 });

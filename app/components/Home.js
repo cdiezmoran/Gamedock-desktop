@@ -51,7 +51,6 @@ class Home extends Component {
 
   handleStop() {
     if(mediaRecorder) {
-      //mediaRecorder.save();
       mediaRecorder.stop();
     }
 
