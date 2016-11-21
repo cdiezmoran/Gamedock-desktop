@@ -11,8 +11,4 @@ const GameSchema = new Schema({
   galleryVideos: { type: [String] }
 });
 
-//TODO: Add validations
-
-//TODO: Add Methods
-
 mongoose.model('Game', GameSchema);

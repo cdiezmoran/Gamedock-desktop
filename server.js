@@ -9,6 +9,7 @@ import express from 'express';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+import mongoose from 'mongoose';
 import { spawn } from 'child_process';
 
 import config from './webpack.config.development';
@@ -18,6 +19,13 @@ const argv = require('minimist')(process.argv.slice(2));
 const app = express();
 const compiler = webpack(config);
 const PORT = process.env.PORT || 3000;
+
+mongoose.connect('mongodb://localhost:27017/gamedock', (error) => {
+  if (error) {
+    console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
+    throw error;
+  }
+});
 
 const wdm = webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
