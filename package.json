@@ -1,6 +1,6 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
+  "name": "Gamedock",
+  "productName": "Gamedock",
   "version": "0.10.0",
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
   "main": "main.js",
@@ -24,7 +24,7 @@
     "cleanup": "mop -v"
   },
   "build": {
-    "appId": "org.develar.ElectronReact",
+    "appId": "com.cdiezm.gamedock",
     "category": "public.app-category.tools",
     "dmg": {
       "contents": [
@@ -60,16 +60,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
+    "url": "git+https://github.com/cdiezmoran/Gamedock-desktop"
   },
   "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chentsulin/electron-react-boilerplate/issues"
+    "name": "Carlos Diez",
+    "email": "cdiezmoran@gmail.com",
+    "url": "https://github.com/cdiezmoran"
   },
   "keywords": [
     "electron",
@@ -80,7 +76,7 @@
     "webpack",
     "react-hot"
   ],
-  "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/cdiezmoran/Gamedock-desktop#readme",
   "devDependencies": {
     "asar": "^0.12.3",
     "babel-core": "^6.18.0",

@@ -44,3 +44,48 @@ a {
   -webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 }
+
+.card {
+  width: 100%;
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  transition: box-shadow 0.25s;
+  border-radius: 2px;
+}
+
+.card .card-image {
+  position: relative;
+}
+
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.card .card-content {
+  padding: 20px;
+  border-radius: 0 0 2px 2px;
+}
+
+.card .card-content .card-title {
+  line-height: 48px;
+}
+
+.card .card-title {
+  color: black;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.card .card-content p {
+  margin: 0;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+}

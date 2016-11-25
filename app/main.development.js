@@ -46,9 +46,10 @@ app.on('ready', async () => {
     width: 1024,
     height: 728,
     minWidth: 896,
-    minHeight: 546
+    minHeight: 546,
+    icon: "../gamedock-logo.png"
   });
-
+  
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 
   mainWindow.webContents.on('did-finish-load', () => {

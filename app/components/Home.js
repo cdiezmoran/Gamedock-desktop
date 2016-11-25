@@ -6,6 +6,8 @@ import MediaStreamRecorder from 'msr';
 import $ from 'jquery';
 import styles from './Home.css';
 
+import GameComponent from './GameComponent';
+
 let mediaRecorder;
 
 class Home extends Component {
@@ -63,6 +65,7 @@ class Home extends Component {
       <div>
         <div className={styles.container}>
           <h2> Home</h2>
+          <GameComponent />
           <video width="640" height="360" id="video" autoPlay/>
           <button onClick={this.handleCapture}>Capture</button>
           <button onClick={this.handleStop}>Stop</button>

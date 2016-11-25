@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 const GameSchema = new Schema({
   name: { type: String },
-  icon: { type: String },
+  img: { type: String },
   releaseDate: { type: Date },
   description: { type: String },
   galleryImages: { type: [String] },
   galleryVideos: { type: [String] }
 });
 
-mongoose.model('Game', GameSchema);
+export default mongoose.model('Game', GameSchema);
