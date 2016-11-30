@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import mongoose from 'mongoose';
 
 import Game from '../../server/models/game';
 

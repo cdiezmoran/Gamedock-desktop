@@ -40,6 +40,9 @@ export default validate({
     'jquery',
     'msr',
     'mongodb',
-    'mongoose'
+    'mongoose',
+    'body-parser',
+    'compression',
+    'react-helmet'
   ]
 });
