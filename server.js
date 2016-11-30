@@ -24,7 +24,7 @@ import Helmet from 'react-helmet';
 
 import routes from './app/routes';
 import { fetchComponentData } from './server/util/fetchData';
-//import posts from './routes/post.routes';
+import posts from './server/routes/game.routes';
 
 import config from './webpack.config.development';
 
@@ -58,6 +58,8 @@ app.use(webpackHotMiddleware(compiler));
 app.use(compression());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
+app.use(express.static(path.resolve(__dirname, './dist')));
+app.use('/api', games);
 
 const renderFullPage = (html, initialState) => {
   const head = Helmet.rewind();

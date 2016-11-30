@@ -43,6 +43,7 @@ export default validate({
     'mongoose',
     'body-parser',
     'compression',
-    'react-helmet'
+    'react-helmet',
+    'isomorphic-fetch'
   ]
 });
