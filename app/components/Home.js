@@ -65,7 +65,14 @@ class Home extends Component {
       <div>
         <div className={styles.container}>
           <h2> Home</h2>
-          <GameComponent />
+          {
+            this.props.games.map((game) => {
+              <div>
+                <h1>game.name</h1>
+                <GameComponent game={game} />
+              </div>
+            })
+          }
           <video width="640" height="360" id="video" autoPlay/>
           <button onClick={this.handleCapture}>Capture</button>
           <button onClick={this.handleStop}>Stop</button>
